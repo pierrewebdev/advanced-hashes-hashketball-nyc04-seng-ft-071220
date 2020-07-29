@@ -180,6 +180,8 @@ end
 
 def team_names
   basketball_game_hash = game_hash
-  basketball_game_hash.map |team,team_hash|
+  basketball_game_hash.map do |team,team_hash|
+    team_hash[:team_name]
+  end
 end
   
