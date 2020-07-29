@@ -178,5 +178,8 @@ def player_numbers(team_name)
   sub_hash[1][:players].map{|player| player[:number]}
 end
 
-
+def team_names
+  basketball_game_hash = game_hash
+  basketball_game_hash.map |team,team_hash|
+end
   
