@@ -148,3 +148,25 @@ def num_points_scored(player)
     points = player_hash
     points[:points]
   end
+  
+  def team_colors(team_name)
+  basketball_game_hash = game_hash
+  
+  hash_of_team_we_want = basketball_game_hash.find do |team,team_hash| team_hash[:team_name] == team_name
+  end
+  hash_of_team_we_want[1][:colors]
+
+end
+
+#pp team_colors("Brooklyn Nets")
+def player_numbers(team_name)
+  #first let's dig into the data and pull out a sub hash for our team_name argument
+  basketball_game_hash = game_hash
+  sub_hash = basketball_game_hash.find do |team,team_hash|
+    team_hash[:team_name] == team_name 
+  end 
+  sub_hash[1][:players].map{|player| player[:number]}
+end
+
+pp player_numbers("Brooklyn Nets")
+  
