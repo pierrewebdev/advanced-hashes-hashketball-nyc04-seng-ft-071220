@@ -192,14 +192,15 @@ end
 
 def big_shoe_rebounds
   basketball_game_hash = game_hash
-  big_shoe_rebounds = basketball_game_hash.map do|team,team_hash|
+  players = basketball_game_hash.map do|team,team_hash|
     team_hash[:players].select{|player|player[:player_name]}
   end
 
- big_shoe_rebounds.flatten!.max_by do |player|
+ big_shoe = players.flatten!.max_by do |player|
   #puts player[:player_name]
   player[:player_name].length
   end
+  big_shoe[:rebounds]
 end
 
   
