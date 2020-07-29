@@ -178,5 +178,5 @@ def player_numbers(team_name)
   sub_hash[1][:players].map{|player| player[:number]}
 end
 
-pp player_numbers("Brooklyn Nets")
+
   
