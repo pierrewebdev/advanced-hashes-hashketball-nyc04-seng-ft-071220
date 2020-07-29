@@ -127,10 +127,9 @@ def game_hash
 end
 
 # Write code here
-def num_points_scored(player)
-  #bring in our helper method to give us access to our game data
-  
-  basketball_game_hash = game_hash()
+#find players on the fly
+def find_player(player)
+basketball_game_hash = game_hash()
   
   # a variable to store an individual player's data after using enumerable methods
   
@@ -141,13 +140,19 @@ def num_points_scored(player)
   
   basketball_game_hash.find do |team_type,team_hash|
     #p team_type,team_hash
-    player_hash = team_hash[:players].find do|current_player|
+    team_hash[:players].find do|current_player|
       current_player[:player_name] == player
       end
     end
-    points = player_hash
-    points[:points]
+    player_hash
   end
+  
+  
+def num_points_scored(player)
+  #bring in our helper method to give us access to our game data
+  player_hash = find_player(player)
+  player_hash[:points]
+end
   
   def team_colors(team_name)
   basketball_game_hash = game_hash
