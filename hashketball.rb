@@ -198,7 +198,7 @@ def big_shoe_rebounds
 
  big_shoe = players.flatten!.max_by do |player|
   #puts player[:player_name]
-  player[:player_name].length
+  player[:shoe]
   end
   big_shoe[:rebounds]
 end
