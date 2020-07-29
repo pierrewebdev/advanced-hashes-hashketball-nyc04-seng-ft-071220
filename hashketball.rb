@@ -184,4 +184,9 @@ def team_names
     team_hash[:team_name]
   end
 end
+
+def player_stats(player)
+  player_hash = find_player(player)
+  player_hash
+end
   
