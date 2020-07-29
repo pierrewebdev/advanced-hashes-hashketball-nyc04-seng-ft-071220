@@ -140,7 +140,7 @@ basketball_game_hash = game_hash()
   
   basketball_game_hash.find do |team_type,team_hash|
     #p team_type,team_hash
-    team_hash[:players].find do|current_player|
+    player_hash = team_hash[:players].find do|current_player|
       current_player[:player_name] == player
       end
     end
